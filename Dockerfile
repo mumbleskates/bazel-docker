@@ -1,12 +1,12 @@
 FROM ubuntu:latest
 
 RUN apt-get update
-RUN apt-get install curl
+RUN apt-get install -y curl
 
 RUN curl https://bazel.build/bazel-release.pub.gpg | apt-key add -
 RUN echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" > /etc/apt/sources.list.d/bazel.list
 
-RUN apt-get update && apt-get install \
+RUN apt-get update && apt-get install -y \
   make \
   clang-9 \
   libc++-9-dev \
