@@ -16,5 +16,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
 RUN ln -s /usr/lib/llvm-9/include/c++/v1 /usr/include/c++/v1
+RUN ln -s /usr/bin/clang-9 /usr/bin/clang
+RUN ln -s /usr/bin/clang++-9 /usr/bin/clang++
 
 CMD ["/bin/bash"]
