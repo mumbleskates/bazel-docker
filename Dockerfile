@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
   clang-10 \
   libc++-10-dev \
   libc++abi-10-dev \
+  python-is-python3 \
   bazel
 
 RUN apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
