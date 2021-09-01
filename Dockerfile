@@ -2,6 +2,9 @@ FROM ubuntu:latest
 
 ARG llvmversion=14
 
+# prevent tzdata install from hanging
+RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo "UTC" > /etc/timezone
+
 RUN apt-get update
 RUN apt-get install -y curl gnupg lsb-release
 
@@ -23,6 +26,7 @@ RUN apt-get install -y \
   libc++abi-$llvmversion-dev \
   libunwind-$llvmversion-dev \
   python-is-python3 \
+  perl \
   bazel
 
 RUN apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
