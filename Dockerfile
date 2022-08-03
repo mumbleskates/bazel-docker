@@ -1,11 +1,12 @@
 FROM ubuntu:latest
 
-ARG llvmversion=15
+ARG llvmversion=16
 
 # prevent tzdata install from hanging
 RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo "UTC" > /etc/timezone
 
 RUN apt-get update
+RUN apt-get upgrade
 RUN apt-get install -y curl gnupg lsb-release
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
