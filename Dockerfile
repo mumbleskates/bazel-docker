@@ -6,7 +6,7 @@ ARG llvmversion=16
 RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo "UTC" > /etc/timezone
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 RUN apt-get install -y curl gnupg lsb-release
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
