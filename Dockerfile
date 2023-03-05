@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ARG llvmversion=16
+ARG llvmversion=17
 
 # prevent tzdata install from hanging
 RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo "UTC" > /etc/timezone
@@ -32,7 +32,6 @@ RUN apt-get install -y \
 
 RUN apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
-RUN ln -s /usr/lib/llvm-$llvmversion/include/c++/v1 /usr/include/c++/v1
 RUN ln -s /usr/bin/clang-$llvmversion /usr/bin/clang
 RUN ln -s /usr/bin/clang++-$llvmversion /usr/bin/clang++
 
