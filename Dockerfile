@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ARG llvmversion=17
+ARG llvmversion=18
 
 # prevent tzdata install from hanging
 RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo "UTC" > /etc/timezone
